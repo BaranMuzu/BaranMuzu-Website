@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Baran's Website</title>
+    </head>
+    <body>
+        <slot />
+    </body>
+</html>
+
+<style>
+
+:root {
+    --backgroundColor: rgba(0, 0, 0, 1);
+    --textColor: rgba(255, 255, 255, 1);
+    
+    --primaryColor: rgba(0, 255, 0, 1);
+    --secondaryColor: rgba(0, 177, 0, 1);
+    --borderColor: rgba(0, 150, 0, 1);
+}
+
+body {
+    background-color: var(--backgroundColor);
+    color: var(--textColor);
+    font-family: sans-serif;
+}
+
+</style>
