@@ -2,15 +2,15 @@
 import Layout from "../Layout.astro";
 
 import Sidebar from '../components/Sidebar.svelte';
-import MainPanel from '../components/mainpanel/AboutMe.svelte';
+import MainPanel from '../components/mainpanel/Home.svelte';
 
 let currentPath = Astro.url.pathname;
 ---
 
 <Layout>
     <div class="main">
-        <Sidebar currentPath={currentPath} />
-        <MainPanel />
+        <Sidebar client:load currentPath={currentPath} />
+        <section class="mainPanel"><MainPanel /></section>
     </div>
 </Layout>
 
@@ -18,5 +18,16 @@ let currentPath = Astro.url.pathname;
     .main {
         display: flex;
         flex: 1;
+        height: 100vh;
+
+        .mainPanel {
+            flex: 1;
+            min-height: 0;
+            padding: 20px;
+            margin-left: auto;
+            margin-right: auto;
+            scrollbar-width: thin;
+            overflow-y: auto;
+        }
     }
 </style>
