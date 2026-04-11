@@ -3,11 +3,13 @@ import Layout from "../Layout.astro";
 
 import Sidebar from '../components/Sidebar.svelte';
 import MainPanel from '../components/mainpanel/Credits.svelte';
+
+let currentPath = Astro.url.pathname;
 ---
 
 <Layout>
     <div class="main">
-        <Sidebar />
+        <Sidebar currentPath={currentPath} />
         <MainPanel />
     </div>
 </Layout>
