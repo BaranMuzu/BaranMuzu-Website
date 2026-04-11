@@ -23,7 +23,7 @@
 </script>
 
 {#if baranAge != null}
-    <span>{baranAge} years old</span>
+    <span>{baranAge}</span>
 {:else}
-    <span>??? years old</span>
+    <span>???</span>
 {/if}
