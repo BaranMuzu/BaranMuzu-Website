@@ -55,7 +55,10 @@
                 <div class="art-grid">
                     {#each gallery.artworks as art}
                         <div class="art-card">
-                            <img src="{thePathh}{art.img}" alt="Fan art" />
+                            <img src="{thePathh}{art.img}" alt="Fan art" class="thumbnail" />
+                            
+                            <img src="{thePathh}{art.img}" alt="Fan art full" class="hover-img" />
+
                             {#if art.by}
                                 <span class="artist-credit">
                                     by 
@@ -133,18 +136,50 @@
         padding: 10px;
         transition: transform 0.2s ease;
         gap: 8px;
+        position: relative;
     }
 
     .art-card:hover {
         transform: scale(1.05);
+        z-index: 10;
     }
 
-    .art-card img {
+    .art-card .thumbnail {
         width: 160px;
         height: 160px;
         object-fit: cover;
         border-radius: 6px;
         background-color: #222;
+    }
+
+    .art-card .hover-img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.8);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.2s ease;
+        
+        max-width: 350px; 
+        max-height: 350px;
+        width: auto;
+        height: auto;
+        
+        object-fit: contain; 
+        
+        background-color: #000;
+        border: 3px solid var(--primary);
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.9);
+        z-index: 20;
+        pointer-events: none;
+    }
+
+    .art-card:hover .hover-img {
+        opacity: 1;
+        visibility: visible;
+        transform: translate(-50%, -50%) scale(1);
     }
 
     .artist-credit {
