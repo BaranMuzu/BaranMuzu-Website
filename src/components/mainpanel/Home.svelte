@@ -1,5 +1,16 @@
 <script>
     import Age from '../misc/Age.svelte';
+
+    let copied = $state(false);
+
+    function copyDiscord() {
+        navigator.clipboard.writeText('baranmuzu').then(() => {
+            copied = true;
+            setTimeout(() => {
+                copied = false;
+            }, 2000);
+        });
+    }
 </script>
 
 <main>
@@ -26,13 +37,13 @@
     <section class="socials">
         <span class="bigText">🌐 Socials:</span>
         
-        <div class="discordTag">
+        <button class="discordTag" onclick={copyDiscord} type="button">
             <img src="https://icons.duckduckgo.com/ip3/discord.com.ico" alt="Discord"/>
-            <span>Discord: baranmuzu</span>
-        </div>
+            <span>{copied ? 'Copied!' : 'Discord: baranmuzu'}</span>
+        </button>
 
         <section class="mainLinks">
-        <a href="https://www.youtube.com/@BaranMuzu" class="youtube">
+            <a href="https://www.youtube.com/@BaranMuzu" class="youtube">
                 <img src="https://icons.duckduckgo.com/ip3/youtube.com.ico" alt=""/> Youtube
             </a>
             <a href="https://github.com/BaranMuzu" class="github">
@@ -113,6 +124,7 @@
 
             .discordTag {
                 display: flex;
+                user-select: none; 
                 align-items: center;
                 gap: 0.5rem;
                 background-color: var(--discord);
@@ -120,6 +132,11 @@
                 padding: 0.5rem 1rem;
                 border-radius: 0.25rem;
                 font-weight: bold;
+                border: none;
+                font-family: inherit;
+                font-size: inherit;    
+                cursor: pointer;
+                transition: transform 150ms ease-in-out;
                 
                 img {
                     width: 16px;
@@ -129,6 +146,11 @@
                     border-radius: 6px;
                     object-fit: contain;
                 }
+            }
+
+            .discordTag:hover {
+                transform: scale(1.05);
+                filter: brightness(1.1);
             }
 
             a {
@@ -142,7 +164,6 @@
                 border-radius: 0.25rem;
                 transition: all 150ms ease-in-out;
                 font-weight: 600;
-                
                 min-width: 150px; 
                 flex: 0 0 auto; 
 
@@ -167,7 +188,6 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 0.75rem;
-                
                 max-width: 650px; 
             }
 
@@ -179,12 +199,8 @@
             }
 
             .otherLinks {
-                a {
-                    opacity: 0.7;
-                }
-                a:hover {
-                    opacity: 1;
-                }
+                a { opacity: 0.7; }
+                a:hover { opacity: 1; }
             }
 
             .bluesky { background-color: var(--bluesky); }

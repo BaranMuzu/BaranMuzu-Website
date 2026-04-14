@@ -10,7 +10,10 @@ let currentPath = Astro.url.pathname;
 <Layout>
     <div class="main">
         <Sidebar client:load currentPath={currentPath} />
-        <section class="mainPanel"><MainPanel /></section>
+        
+        <section class="mainPanel">
+            <MainPanel client:load />
+        </section>
     </div>
 </Layout>
 
