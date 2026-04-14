@@ -1,3 +1,8 @@
+---
+import Sidebar from './components/Sidebar.svelte';
+const { path = "/" } = Astro.props;
+---
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -14,7 +19,10 @@
         <title>Baran's Website</title>
     </head>
     <body>
-        <slot />
+        <div class="main">
+            <Sidebar client:load currentPath={path} />
+            <section class="mainPanel"><slot /></section>
+        </div>
     </body>
 </html>
 
@@ -52,15 +60,38 @@
     font-display: swap;
 }
 
-body {
-    background-color: var(--background);
-    color: var(--text);
-    font-family: funkin;
-    overflow: hidden;
-    
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    overflow: hidden;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+    background: var(--background);
+    color: var(--text);
+    font-family: funkin;
     box-sizing: border-box;
+    overflow-y: hidden;
+    
+    .mainPanel {
+        flex: 1;
+        min-width: 0;
+        max-height: 100vh;
+        padding: 50px;
+        box-sizing: border-box;
+        overflow-y: scroll;
+        overflow-x: hidden;
+
+        @media (max-width: 768px) {
+            flex: none;
+            max-width: 100vw;
+            scroll-snap-align: start;
+            padding: 20px;
+        }
+    }
 }
 
 </style>

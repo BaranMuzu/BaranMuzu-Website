@@ -49,6 +49,10 @@
             <a class:active={checkActiveLink(link.href)} href={link.href}>{link.label}</a>
         {/each}
     </div>
+    
+    <div class="mobileHint">
+        <span>Hey! Drag to left to fill your screen to the main panel!</span>
+    </div>
 </div>
 
 <style>
@@ -108,6 +112,16 @@
                 border-color: var(--border);
             } a:hover {
                 scale: 1.05;
+            }
+        }
+        
+        .mobileHint {
+            display: none;
+            margin-top: 15rem;
+            color: var(--text);
+        } @media screen and (max-width: 768px) {
+            .mobileHint {
+                display: block;
             }
         }
     }

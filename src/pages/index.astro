@@ -1,36 +1,9 @@
 ---
 import Layout from "../Layout.astro";
-
-import Sidebar from '../components/Sidebar.svelte';
 import MainPanel from '../components/mainpanel/Home.svelte';
-
 let currentPath = Astro.url.pathname;
 ---
 
-<Layout>
-    <div class="main">
-        <Sidebar client:load currentPath={currentPath} />
-        
-        <section class="mainPanel">
-            <MainPanel client:load />
-        </section>
-    </div>
+<Layout path={currentPath}>
+    <MainPanel client:load />
 </Layout>
-
-<style>
-    .main {
-        display: flex;
-        flex: 1;
-        height: 100vh;
-
-        .mainPanel {
-            flex: 1;
-            min-height: 0;
-            padding: 20px;
-            margin-left: auto;
-            margin-right: auto;
-            scrollbar-width: thin;
-            overflow-y: auto;
-        }
-    }
-</style>
