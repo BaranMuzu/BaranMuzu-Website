@@ -159,7 +159,7 @@
         transform: translate(-50%, -50%) scale(0.8);
         opacity: 0;
         visibility: hidden;
-        transition: all 0.2s ease;
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s 0.2s;
         
         max-width: 350px; 
         max-height: 350px;
@@ -180,6 +180,7 @@
         opacity: 1;
         visibility: visible;
         transform: translate(-50%, -50%) scale(1);
+        transition: opacity 0.2s ease, transform 0.2s ease, visibility 0s 0s;
     }
 
     .artist-credit {
