@@ -202,7 +202,7 @@
             margin-top: auto;
             
             a {
-                color: aqua;
+                color: var(--primary);
                 text-decoration: none;
             }
         }
