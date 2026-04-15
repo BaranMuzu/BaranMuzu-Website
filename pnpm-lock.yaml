@@ -17,6 +17,9 @@ importers:
       svelte:
         specifier: ^5.55.3
         version: 5.55.3
+      svelte-confetti:
+        specifier: ^2.3.2
+        version: 2.3.2(svelte@5.55.3)
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -1281,6 +1284,11 @@ packages:
 
   stringify-entities@4.0.4:
     resolution: {integrity: sha512-IwfBptatlO+QCJUo19AqvrPNqlVMpW9YEL2LIVY+Rpv2qsjCGxaDLNRgeGsQWJhfItebuJhsGSLjaBbNSQ+ieg==}
+
+  svelte-confetti@2.3.2:
+    resolution: {integrity: sha512-cfIwoGqMPYWRYDUz2g7mG1uHYWy7VBepelQdzCC3j/M42UrAqaBYmIi9xaoQfow4fbINHO9WuARnTyK2bjjGQg==}
+    peerDependencies:
+      svelte: '>=5.0.0'
 
   svelte2tsx@0.7.53:
     resolution: {integrity: sha512-ljVSwmnYRDHRm8+7ICP6QoAN7U7vgOFfPBLN6T745YWNYqRRSzHxlrzUVqMjYls2Un8MzJissfziy/38e6Deeg==}
@@ -3033,6 +3041,10 @@ snapshots:
     dependencies:
       character-entities-html4: 2.1.0
       character-entities-legacy: 3.0.0
+
+  svelte-confetti@2.3.2(svelte@5.55.3):
+    dependencies:
+      svelte: 5.55.3
 
   svelte2tsx@0.7.53(svelte@5.55.3)(typescript@5.9.3):
     dependencies:

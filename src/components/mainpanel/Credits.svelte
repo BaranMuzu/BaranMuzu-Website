@@ -220,7 +220,8 @@
             margin-top: 20px;
             text-align: center;
             font-size: 0.9rem;
-            margin-top: auto;
+            margin-top: 50px;
+            padding-bottom: 50px;
             
             a {
                 color: var(--primary);
