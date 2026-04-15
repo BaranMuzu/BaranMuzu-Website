@@ -21,7 +21,8 @@
         new ArtistGroup("KhRo_ Dreemurr", "https://www.youtube.com/channel/UCpy2SmO6ATsn1KKmJwzQ42g", [
             { img: "barannewoc.png" }, { img: "BARANSHOCKJ.png" }, { img: "undertal.png" },
             { img: "undertalebarancolored.png" }, { img: "yey.webp" }, { img: "khrogang.png" },
-            { img: "idktimetrio.png" }
+            { img: "idktimetrio.png" }, { img: "ohsupdude.png" }, { img: "baranandkhrobirthday.png" },
+            {img: "bannergang.png"}, {img: "imhigh.png"}, {img: "imtallig.png"}
         ]),
         new ArtistGroup("Other Awesome Artists", null, [
             { img: "barangafa.png", by: "Flazeboi" },

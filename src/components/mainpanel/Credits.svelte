@@ -35,6 +35,27 @@
           { name: "GitHub", url: "https://github.com/daveberrys" }
         ]
       ),
+
+      new Credits(
+        "TechnikTil",
+        "assets/images/til poorly drawn in ms paint.png",
+        "ooooooo a butterfly",
+        "Time & Age Code!, Huge Help :]",
+        [
+          { name: "Website", url: "https://techniktil.tilnotdrip.org/" },
+          { name: "GitHub", url: "https://github.com/TechnikTil" }
+        ]
+      ),
+
+      new Credits(
+        "CharGoldenYT",
+        "https://github.com/CharGoldenYT/CharGoldenYT/raw/main/cha.png",
+        "I swear vs char is coming in 2040",
+        "Fixing the Stats!",
+        [
+          { name: "GitHub", url: "https://github.com/CharGoldenYT" }
+        ]
+      ),
     ];
 </script>
 
