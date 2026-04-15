@@ -38,7 +38,7 @@
 
       new Credits(
         "TechnikTil",
-        "assets/images/til poorly drawn in ms paint.png",
+        "/assets/images/til poorly drawn in ms paint.png",
         "ooooooo a butterfly",
         "Time & Age Code!, Huge Help :]",
         [
