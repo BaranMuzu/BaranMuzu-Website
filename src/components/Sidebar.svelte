@@ -21,8 +21,23 @@
         new SidebarLink("Projects", "/projects")
     ];
 
+    function formatPath(path) {
+        if (path == "/") {
+            return "/";
+        } else {
+            return path.replace(/\/$/, "");
+        }
+    }
+    
     function checkActiveLink(href) {
-        return currentPath == href;
+        let formattedCurrentPath = formatPath(currentPath);
+        let formattedHref = formatPath(href);
+
+        if (formattedCurrentPath == formattedHref) {
+            return true;
+        } else {
+            return false;
+        }
     }
 </script>
 
