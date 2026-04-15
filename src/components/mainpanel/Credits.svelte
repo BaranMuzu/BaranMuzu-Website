@@ -21,7 +21,7 @@
         "BaranMuzu",
         "/assets/images/spin.gif",
         "insert baran's funny quote here",
-        "Made with Astro + Svelte rework.",
+        "Helped with Astro + Svelte rework.",
         []
       ),
       
@@ -29,7 +29,7 @@
         "Daveberry",
         "https://codedave.pages.dev/assets/images/Daveberry%20Wave.png",
         "what the helly why is it so smooth...",
-        "Made with Astro + Svelte rework. Made the interface.",
+        "Helped with Astro + Svelte rework. Made the interface.",
         [
           { name: "Website", url: "https://codedave.pages.dev" },
           { name: "GitHub", url: "https://github.com/daveberrys" }
