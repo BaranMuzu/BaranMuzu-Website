@@ -3,13 +3,15 @@ import 'dotenv/config';
 export async function POST(req) {
   const { username, link, file } = req.body;
   const webhookUrl = process.env.DISCORD_WEBHOOK;
+  
+  const barandcid = "1084601562762051706"; 
 
   if (!webhookUrl) throw new Error("DISCORD_WEBHOOK is not set in environment variables.");
 
   const formData = new FormData();
   
   const payload = {
-    content: `# 🎨 New Art Submission!`,
+    content: `<@${barandcid}> \n# 🎨 New Art Submission!`, 
     embeds: [{
       title: "Art Details",
       fields: [
