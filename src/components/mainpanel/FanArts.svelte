@@ -1,4 +1,6 @@
 <script>
+    import SubmitArt from "../misc/SubmitArt.svelte";
+    
     class ArtistGroup {
         constructor(artistName, artistURL, artworks) {
             this.artistName = artistName;
@@ -78,6 +80,12 @@
             <hr class="divider" />
         {/each}
     </div>
+    
+    <section>
+        <h1 style="color: var(--primary)">Want to submit your art?</h1>
+        <p>Submit it here! But please, don't spam-</p>
+        <SubmitArt />
+    </section>
 </main>
 
 <style>
