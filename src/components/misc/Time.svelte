@@ -6,6 +6,8 @@
     let baranTime = null;
     export let statusImage = "/assets/images/spin.gif";
     export let statusText = "Awake";
+    
+    export let isBirthday = false; 
     let timeUpdater = null;
 
     function setBaranDate() {
@@ -14,7 +16,10 @@
 
         const timeString = date.toLocaleString("en-US", { timeZone: baranTimeZone });
         const baranDate = new Date(timeString);
+        
         const currentHour = baranDate.getHours();
+        const currentMonth = baranDate.getMonth();
+        const currentDay = baranDate.getDate();
 
         baranTime = date.toLocaleTimeString("tr-TR", {
             hour: "2-digit",
@@ -23,12 +28,19 @@
             timeZone: baranTimeZone
         });
 
-        if (currentHour >= 0 && currentHour < 7) {
-            statusImage = "/assets/images/baransleep.png";
-            statusText = "Sleeping";
+        if (currentMonth === 3 && currentDay === 16) {
+            isBirthday = true;
+            statusImage = "/assets/images/birthday.png";
+            statusText = "Birthday!";
         } else {
-            statusImage = "/assets/images/spin.gif";
-            statusText = "Awake";
+            isBirthday = false;
+            if (currentHour >= 0 && currentHour < 7) {
+                statusImage = "/assets/images/baransleep.png";
+                statusText = "Sleeping";
+            } else {
+                statusImage = "/assets/images/spin.gif";
+                statusText = "Awake";
+            }
         }
 
         timeUpdater = setTimeout(function() {

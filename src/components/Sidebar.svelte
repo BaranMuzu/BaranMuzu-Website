@@ -1,10 +1,12 @@
 <script>
     import Time from "./misc/Time.svelte";
+    import { Confetti } from "svelte-confetti";
+
     export let currentPath = "/";
     let statusImage = "/assets/images/spin.gif";
     let statusText = "Awake";
+    let isBirthday = false;
 
-    // SIDEBAR NAVIGATION CODE
     class SidebarLink {
         constructor(label, href) {
             this.label = label;
@@ -20,15 +22,17 @@
     ];
 
     function checkActiveLink(href) {
-        if (currentPath == href) {
-            return true;
-        } else {
-            return false;
-        }
+        return currentPath == href;
     }
 </script>
 
 <div class="main">
+    {#if isBirthday}
+        <div class="confetti-container">
+            <Confetti x={[-2, 2]} y={[0, 1]} amount={200} fallDistance="100vh" delay={[0, 4000]} />
+        </div>
+    {/if}
+
     <div class="top">
         <img
             src={statusImage}
@@ -36,10 +40,18 @@
             height="128"
             alt={statusText}
         />
-        <span class="mainText">I'm Baran!</span>
+        
+        <span class="mainText">
+            {#if isBirthday}
+                Happy Birthday to me!!
+            {:else}
+                I'm Baran!
+            {/if}
+        </span>
+
         <div class="localTime">
             <span>Local Time:</span>
-            <Time bind:statusImage bind:statusText />
+            <Time bind:statusImage bind:statusText bind:isBirthday />
         </div>
         <span>Welcome to my page, looks like you want to learn more about me. So here we go!</span>
     </div>
@@ -56,7 +68,16 @@
 </div>
 
 <style>
+    .confetti-container {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        pointer-events: none;
+        z-index: 100;
+    }
+
     .main {
+        position: relative;
         display: flex;
         flex-direction: column;
         align-items: center;
