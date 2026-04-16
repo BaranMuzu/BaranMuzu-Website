@@ -28,6 +28,7 @@
         ]),
         new ArtistGroup("Other Awesome Artists", null, [
             { img: "barangafa.png", by: "Flazeboi" },
+            { img: "farmerhat.png", by: "Farmer", link: "https://www.youtube.com/@HistoryLoverFarmer" },
             { img: "bawanmuzuhead_enhanced.png", by: "daveberry", link: "https://daveberry.netlify.app/" },
             { img: "BARAN HELL YAEH.png", by: "bellitalmao", link: "https://bsky.app/profile/bellitalmao.bsky.social" },
             { img: "baran if he crashed out.png", by: "ananophanes1988", link: "https://www.youtube.com/@ananophanes1988" },
