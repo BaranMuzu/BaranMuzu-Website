@@ -7,7 +7,7 @@ if you wanted to fork this, make sure you have both the `main` branch and the `a
 ```env
 PUBLIC_SERVER="http://localhost:3000"
 ```
-this is for your api server. you can use vercel, cloudflare workers, netlify or anything that can host express serverless.
+this is for your api server. for development purposes, please keep it at `http://localhost:3000`. you can use vercel, cloudflare workers, netlify or anything that can host express serverless.
 
 ---
 
