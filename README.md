@@ -1,5 +1,16 @@
-hiya
+# Baran's API server - made by Daveberry
 
-just edit shit at [@src/components/mainpanel/](src/components/mainpanel/)
+this is the backend for baran's website. currently, this is for discord webhook to sending your art!
 
-remade by daveberry & baran!!!!
+---
+
+`.env` must have: `DISCORD_WEBHOOK`.
+```env
+DISCORD_WEBHOOK="yourWebhookHere"
+```
+
+if you wish to use this, please credit daveberry & baran. they're the creators of this
+
+---
+
+original forked repo from: https://github.com/daveberrys/DaveWeb/tree/api
