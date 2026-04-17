@@ -4,7 +4,7 @@ this is the backend for baran's website. currently, this is for discord webhook 
 
 ---
 
-`.env` must have: `DISCORD_WEBHOOK`.
+`.env` must have:
 ```env
 DISCORD_WEBHOOK="yourWebhookHere"
 ```
