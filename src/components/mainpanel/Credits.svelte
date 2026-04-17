@@ -1,4 +1,6 @@
 <script>
+    import LatestCommit from "../misc/LatestCommit.svelte";
+    
     class Credits {
         constructor(name, image, quote, role, links) {
             this.name = name;
@@ -101,10 +103,13 @@
     </div>
     
     <span class="extras">
-        The GitHub Repository is right here! <br/>
-        <a href="https://github.com/BaranMuzu/BaranMuzu-Website" target="_blank">
-            GitHub Repository
-        </a>
+        <LatestCommit />
+        <section>
+            The GitHub Repository is right here! <br/>
+            <a href="https://github.com/BaranMuzu/BaranMuzu-Website" target="_blank">
+                GitHub Repository
+            </a>
+        </section>
     </span>
 </main>
 
@@ -239,6 +244,11 @@
             font-size: 0.9rem;
             margin-top: 50px;
             padding-bottom: 50px;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
             
             a {
                 color: var(--primary);
