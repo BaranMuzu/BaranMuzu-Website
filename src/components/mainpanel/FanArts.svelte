@@ -14,7 +14,7 @@
             { img: "AFTERALL-.png" }, { img: "baranbday.png" }, { img: "baranhellyah.png" },
             { img: "baransad.png" }, { img: "baranwaersoutfitophelia.png" }, { img: "ÇALIŞSANAAMINAKODUĞUMUNUNİTYSİ.png" },
             { img: "DWAKJŞLDASŞLDWAKD.png" }, { img: "inamk.png" }, { img: "nikoran.png" },
-            { img: "fnfmobiletuhmbail.png" }, { img: "iatethia.png" }
+            { img: "fnfmobiletuhmbail.png" }, { img: "iatethia.png" }, { img: "bit.png" }
         ]),
         new ArtistGroup("@curiouschrononaut", "https://www.youtube.com/channel/UC1dA53U0RAzhroX6X8tcEHQ", [
             { img: "umm.png" }, { img: "baran.png" }, { img: "Baslksz1054_20240919223959.png" },
