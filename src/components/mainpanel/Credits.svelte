@@ -1,61 +1,72 @@
 <script>
-    class Credits {
-      constructor(name, image, quote, role, links) {
-        this.name = name;
-        this.image = image;
-        this.quote = quote;
-        this.role = role;
-        this.links = links.map(link => {
-            const domain = new URL(link.url).hostname; 
-            return {
-                name: link.name,
-                url: link.url,
-                iconUrl: `https://icons.duckduckgo.com/ip3/${domain}.ico`
-            };
-        });
-      }
-    }
+    import LatestCommit from "../misc/LatestCommit.svelte";
     
+    class Credits {
+        constructor(name, image, quote, role, links) {
+            this.name = name;
+            this.image = image;
+            this.quote = quote;
+            this.role = role;
+            this.links = links.map((link) => {
+                const domain = new URL(link.url).hostname;
+                return {
+                    name: link.name,
+                    url: link.url,
+                    iconUrl: `https://icons.duckduckgo.com/ip3/${domain}.ico`,
+                };
+            });
+        }
+    }
+
+    function getPersonClass(personName) {
+        if (!personName) {
+            return "";
+        }
+
+        return personName
+            .trim()
+            .replaceAll(" ", "-")
+            .replace(/[^a-zA-Z0-9_-]/g, "");
+    }
+
     const credits = [
-      new Credits(
-        "BaranMuzu",
-        "/assets/images/spin.gif",
-        "insert baran's funny quote here",
-        "Helped with Astro + Svelte rework.",
-        []
-      ),
-      
-      new Credits(
-        "Daveberry",
-        "https://codedave.pages.dev/assets/images/Daveberry%20Wave.png",
-        "what the helly why is it so smooth...",
-        "Helped with Astro + Svelte rework. Made the interface.",
-        [
-          { name: "Website", url: "https://codedave.pages.dev" },
-          { name: "GitHub", url: "https://github.com/daveberrys" }
-        ]
-      ),
+        new Credits(
+            "BaranMuzu",
+            "/assets/images/spin.gif",
+            "insert baran's funny quote here",
+            "Helped with Astro + Svelte rework.",
+            [],
+        ),
 
-      new Credits(
-        "TechnikTil",
-        "/assets/images/til poorly drawn in ms paint.png",
-        "ooooooo a butterfly",
-        "Time & Age Code!, Huge Help :]",
-        [
-          { name: "Website", url: "https://techniktil.tilnotdrip.org/" },
-          { name: "GitHub", url: "https://github.com/TechnikTil" }
-        ]
-      ),
+        new Credits(
+            "Daveberry",
+            "https://codedave.pages.dev/assets/images/Daveberry%20Wave.png",
+            "what the helly why is it so smooth...",
+            "Helped with Astro + Svelte rework. Made the interface.",
+            [
+                { name: "Website", url: "https://codedave.pages.dev" },
+                { name: "GitHub", url: "https://github.com/daveberrys" },
+            ],
+        ),
 
-      new Credits(
-        "CharGoldenYT",
-        "https://github.com/CharGoldenYT/CharGoldenYT/raw/main/cha.png",
-        "I swear vs char is coming in 2040",
-        "Fixing the Stats!",
-        [
-          { name: "GitHub", url: "https://github.com/CharGoldenYT" }
-        ]
-      ),
+        new Credits(
+            "TechnikTil",
+            "/assets/images/til poorly drawn in ms paint.png",
+            "ooooooo a butterfly",
+            "Time & Age Code!, Huge Help :]",
+            [
+                { name: "Website", url: "https://techniktil.tilnotdrip.org/" },
+                { name: "GitHub", url: "https://github.com/TechnikTil" },
+            ],
+        ),
+
+        new Credits(
+            "CharGoldenYT",
+            "https://github.com/CharGoldenYT/CharGoldenYT/raw/main/cha.png",
+            "I swear vs char is coming in 2040",
+            "Fixing the Stats!",
+            [{ name: "GitHub", url: "https://github.com/CharGoldenYT" }],
+        ),
     ];
 </script>
 
@@ -64,7 +75,7 @@
     
     <div class="parent">
         {#each credits as credit}
-            <div class="content">
+            <div class={"content " + getPersonClass(credit.name)}>
                 <img
                     src={credit.image}
                     alt={credit.name}
@@ -92,10 +103,13 @@
     </div>
     
     <span class="extras">
-        The GitHub Repository is right here! <br/>
-        <a href="https://github.com/BaranMuzu/BaranMuzu-Website" target="_blank">
-            GitHub Repository
-        </a>
+        <LatestCommit />
+        <section>
+            The GitHub Repository is right here! <br/>
+            <a href="https://github.com/BaranMuzu/BaranMuzu-Website" target="_blank">
+                GitHub Repository
+            </a>
+        </section>
     </span>
 </main>
 
@@ -189,6 +203,14 @@
                     }
                 }
             }
+
+            .content.Daveberry {
+                border-color: #008BFF;
+            } .content.TechnikTil {
+                border-color: #FFFF00;
+            } .content.CharGoldenYT {
+                border-color: #FF8800;
+            }
             
             .content:hover {
                 .bigText {
@@ -222,6 +244,11 @@
             font-size: 0.9rem;
             margin-top: 50px;
             padding-bottom: 50px;
+            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
             
             a {
                 color: var(--primary);

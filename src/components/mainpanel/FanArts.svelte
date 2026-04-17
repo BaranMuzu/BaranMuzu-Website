@@ -24,7 +24,7 @@
             { img: "barannewoc.png" }, { img: "BARANSHOCKJ.png" }, { img: "undertal.png" },
             { img: "undertalebarancolored.png" }, { img: "yey.webp" }, { img: "khrogang.png" },
             { img: "idktimetrio.png" }, { img: "ohsupdude.png" }, { img: "baranandkhrobirthday.png" },
-            {img: "bannergang.png"}, {img: "imhigh.png"}, {img: "imtallig.png"}
+            {img: "bannergang.png"}, {img: "imhigh.png"}, {img: "imtallig.png"}, {img : "baran cowboy.png"}
         ]),
         new ArtistGroup("Other Awesome Artists", null, [
             { img: "barangafa.png", by: "Flazeboi" },
@@ -35,7 +35,7 @@
             { img: "naberbebeeeekk.png", by: "ananophanes1988", link: "https://www.youtube.com/@ananophanes1988" },
             { img: "baranboydan.png", by: "ilikebroom", link: "https://www.youtube.com/channel/UCf4yWt5zo6ZvUX4vPIhjMSQ" },
             { img: "baranvsbroom.png", by: "ilikebroom", link: "https://www.youtube.com/channel/UCf4yWt5zo6ZvUX4vPIhjMSQ" },
-            { img: "park.png", by: "darksyspiral" }
+            { img: "park.png", by: "darksyspiral" }, { img: "baran tuff.png", by: "Hanna" }
         ])
     ];
 
