@@ -1,5 +1,6 @@
 <script>
     import Age from '../misc/Age.svelte';
+    import WakaStats from '../misc/WakaStats.svelte';
 
     let copied = $state(false);
 
@@ -83,14 +84,8 @@
             </a>
         </section>
     </section>
-    
-    <section class="stats">
-        <span class="bigText">📈 Github Stats</span>
-        <section class="statsContent">
-            <img src="https://raw.githubusercontent.com/BaranMuzu/baranmuzu/f39fcdea8c8ffde24b02ec4e18afc1bc256ab361/profile/stats.svg" alt="Github Stats" />
-            <img src="https://raw.githubusercontent.com/BaranMuzu/baranmuzu/f39fcdea8c8ffde24b02ec4e18afc1bc256ab361/profile/wakatime.svg" alt="Wakatime Stats" />
-        </section>
-    </section>
+
+    <WakaStats />
 </main>
 
 <style>
