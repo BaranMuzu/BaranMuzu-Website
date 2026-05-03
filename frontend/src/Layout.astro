@@ -28,7 +28,7 @@ const { path = "/" } = Astro.props;
     <body>
         <div class="main">
             <Sidebar transition:persist client:load currentPath={path} />
-            <section class="mainPanel"><slot /></section>
+            <section class="mainPanel" transition:animate="slide"><slot /></section>
         </div>
     </body>
 </html>
@@ -93,7 +93,7 @@ html, body {
         box-sizing: border-box;
         overflow-y: scroll;
         overflow-x: hidden;
-
+        
         @media (max-width: 768px) {
             flex: none;
             max-width: 100vw;

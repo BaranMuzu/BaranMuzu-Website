@@ -1,4 +1,4 @@
-<script>
+z<script>
     import Age from '../misc/Age.svelte';
     import WakaStats from '../misc/WakaStats.svelte';
 
