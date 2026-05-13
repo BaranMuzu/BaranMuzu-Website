@@ -10,7 +10,7 @@
     }
 
     const galleries = [
-        new ArtistGroup("@taylorsucksbruh", "https://www.youtube.com/channel/UCjOkXP2mfyH-x9RTrMS1kug", [
+        new ArtistGroup("@owndreamm_", "https://www.youtube.com/channel/UCjOkXP2mfyH-x9RTrMS1kug", [
             { img: "AFTERALL-.png" }, { img: "baranbday.png" }, { img: "baranhellyah.png" },
             { img: "baransad.png" }, { img: "baranwaersoutfitophelia.png" }, { img: "ÇALIŞSANAAMINAKODUĞUMUNUNİTYSİ.png" },
             { img: "DWAKJŞLDASŞLDWAKD.png" }, { img: "inamk.png" }, { img: "nikoran.png" },
