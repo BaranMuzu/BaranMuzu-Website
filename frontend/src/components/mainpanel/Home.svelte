@@ -1,4 +1,4 @@
-z<script>
+<script>
     import Age from '../misc/Age.svelte';
     import WakaStats from '../misc/WakaStats.svelte';
 
@@ -141,13 +141,11 @@ z<script>
                     border-radius: 6px;
                     object-fit: contain;
                 }
+                &:hover {
+                    transform: scale(1.05);
+                    filter: brightness(1.1);
+                }
             }
-
-            .discordTag:hover {
-                transform: scale(1.05);
-                filter: brightness(1.1);
-            }
-
             a {
                 display: flex;
                 align-items: center;
@@ -170,11 +168,10 @@ z<script>
                     border-radius: 6px;
                     object-fit: contain;
                 }
-            }
-
-            a:hover {
-                scale: 1.05;
-                filter: brightness(1.1);
+                &:hover {
+                    scale: 1.05;
+                    filter: brightness(1.1);
+                }
             }
 
             .mainLinks, .otherLinks {

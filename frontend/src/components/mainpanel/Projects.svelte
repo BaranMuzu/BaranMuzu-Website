@@ -17,6 +17,12 @@
 
     const projects = [
         new Project(
+            "Discovery Island Treasury", 
+            "Discovery Island Treasury is a fan-mod of Markiplier Montage about the Treasure Island series. Where in this alternate timeline, the mod focuses more on another YouTuber named RiskRim and his Five Nights at Treasure Island gameplays. This is the demo, so things will change.", 
+            "discoveryisland.png", 
+            [{ name: "GameBanana", url: "https://gamebanana.com/mods/669679" }]
+        ),
+        new Project(
             "FNaF 4 on a Friday Night... Funkin'?", 
             "This is a recreation of FNaF 4 in FNF Psych Engine", 
             "fnaf4fnf.png", 
@@ -106,6 +112,11 @@
                 </div>
             </div>
         {/each}
+    </div>
+
+    <div class="more-projects-note">
+        <p>Not every project might be included here.</p>
+        <p>Check out my <span class="highlight">socials</span> to see more!</p>
     </div>
 </main>
 
@@ -222,5 +233,23 @@
     .link-btn img {
         width: 18px;
         height: 18px;
+    }
+
+    .more-projects-note {
+        margin-top: 4rem;
+        text-align: center;
+        color: #bbb;
+        font-size: 1.1rem;
+        line-height: 1.5;
+        max-width: 500px;
+    }
+
+    .more-projects-note p {
+        margin: 0.5rem 0;
+    }
+
+    .more-projects-note .highlight {
+        color: var(--primary);
+        font-weight: bold;
     }
 </style>

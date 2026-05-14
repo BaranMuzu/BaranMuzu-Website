@@ -35,7 +35,10 @@
             { img: "naberbebeeeekk.png", by: "ananophanes1988", link: "https://www.youtube.com/@ananophanes1988" },
             { img: "baranboydan.png", by: "ilikebroom", link: "https://www.youtube.com/channel/UCf4yWt5zo6ZvUX4vPIhjMSQ" },
             { img: "baranvsbroom.png", by: "ilikebroom", link: "https://www.youtube.com/channel/UCf4yWt5zo6ZvUX4vPIhjMSQ" },
-            { img: "park.png", by: "darksyspiral" }, { img: "baran tuff.png", by: "Hanna" }
+            { img: "park.png", by: "darksyspiral" }, 
+            { img: "baran tuff.png", by: "Hanna" },
+            { img: "happybirthdayanilversion.png", by: "Anilia" },
+            { img: "buffed.png", by: "Anilia" },
         ])
     ];
 
