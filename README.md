@@ -3,8 +3,4 @@
 
 ---
 
-ja
-
----
-
 if you wish to use this, please credit daveberry & baran. they're the creators of this
