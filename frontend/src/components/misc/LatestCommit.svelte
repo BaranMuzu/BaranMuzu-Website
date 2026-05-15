@@ -22,29 +22,36 @@
     fetchLatestCommit();
 </script>
 
-<main>
-    {#if loading}
-        <span>Loading...</span>
-    {:else if error}
-        <span class="bigText" style="color: red;">Failed to fetch: {error}</span>
-    {:else if latestCommit}
-        <section class="left">
-            <img
-                src={latestCommit.image}
-                alt={latestCommit.name}
-                class="avatar"
-            />
-        </section>
-        
-        <section class="right">
-            <span class="bigText">{latestCommit.name}</span>
-            <span>{latestCommit.message}</span>
-        </section>
-    {/if}
-</main>
+<!--  -->
+
+{#if loading}
+    <span>Loading...</span>
+{:else if error}
+    <span style="color: red;">Failed to fetch: {error}</span>
+{/if}
+
+{#if latestCommit}
+<a href={latestCommit.url} target="_blank">
+    <section class="left">
+        <img
+            src={latestCommit.image}
+            alt={latestCommit.name}
+            class="avatar"
+        />
+    </section>
+    
+    <section class="right">
+        <span class="bigText">{latestCommit.name}</span>
+        <span>{latestCommit.message}</span>
+        <span class="date">Commited @ {latestCommit.date}</span>
+    </section>
+</a>
+{/if}
+
+<!--  -->
 
 <style>
-    main {
+    a {
         background-color: var(--background);
         border: 2px solid var(--primary);
         padding: 0.75rem 1rem;
@@ -53,6 +60,8 @@
         gap: 5px;
         text-align: left;
         align-items: center;
+        text-decoration: none;
+        color: var(--text);
         
         .left {
             .avatar {
@@ -67,11 +76,22 @@
             flex-direction: column;
             align-items: flex-start;
             gap: 5px;
+
+            .date {
+                font-size: 0.8rem;
+                color: rgba(255, 255, 255, 0.5);
+            }
+        }
+
+        transition: scale 0.15s ease-in-out;
+        &:hover {
+            scale: 1.05;
+            cursor: pointer;
         }
     }
     
     .bigText {
         font-weight: bold;
-        font-size: 2rem;
+        font-size: 1.5rem;
     }
 </style>

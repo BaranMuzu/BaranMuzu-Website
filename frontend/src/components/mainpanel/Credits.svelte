@@ -42,7 +42,7 @@
             "Daveberry",
             "https://codedave.pages.dev/assets/images/Daveberry%20Wave.png",
             "what the helly why is it so smooth...",
-            "Helped with Astro + Svelte rework. Made the interface.",
+            "Helped with Astro + Svelte rework, made the backend.",
             [
                 { name: "Website", url: "https://codedave.pages.dev" },
                 { name: "GitHub", url: "https://github.com/daveberrys" },
@@ -85,7 +85,7 @@
                     <span class="bigText">{credit.name}</span>
                     <span>{credit.role}</span>
                     <section class="expand">
-                        <span>{credit.quote}</span>
+                        <span>"{credit.quote}"</span>
                         {#if credit.links}
                             <section class="links">
                                 {#each credit.links as link}
@@ -148,8 +148,10 @@
                 width: 100%;
                 
                 .profilePicture {
-                    width: 128px;
-                    height: 128px;
+                    --size: 10rem;
+                    @media screen and (max-width: 768px) { --size: 5rem; }
+                    width: var(--size);
+                    height: var(--size);
                 }
                 
                 section {

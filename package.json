@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "pnpm -r dev"
+    "dev": "pnpm -r dev",
+    "dev:frontend": "pnpm --filter baranwebsite-frontend dev",
+    "dev:backend": "pnpm --filter baranwebsite-backend dev"
   },
   "keywords": [],
   "author": "",
