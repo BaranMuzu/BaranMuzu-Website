@@ -10,7 +10,7 @@
             const response = await fetch(url);
             if (!response.ok) throw new Error("Fetching failed. What a skill issue.");
             const data = await response.json();
-            latestCommit = data[0] || data;
+            latestCommit = data;
         } catch (err) {
             error = err.message;
             console.error(err);
@@ -24,71 +24,94 @@
 
 <!--  -->
 
-{#if loading}
-    <span>Loading...</span>
-{:else if error}
-    <span style="color: red;">Failed to fetch: {error}</span>
-{/if}
-
-{#if latestCommit}
-<a href={latestCommit.url} target="_blank">
-    <section class="left">
-        <img
-            src={latestCommit.image}
-            alt={latestCommit.name}
-            class="avatar"
-        />
-    </section>
+<main>
+    {#if loading}
+        <span>Loading...</span>
+    {:else if error}
+        <span style="color: red;">Failed to fetch: {error}</span>
+    {/if}
     
-    <section class="right">
-        <span class="bigText">{latestCommit.name}</span>
-        <span>{latestCommit.message}</span>
-        <span class="date">Commited @ {latestCommit.date}</span>
-    </section>
-</a>
-{/if}
+    {#if latestCommit}
+        <div>
+            <section style="text-align: center;">
+                <span class="bigText">Latest Commit (6 commits)</span> <br>
+                <span>Click on a commit to view details.</span>
+            </section>
+            
+            {#each latestCommit as commit}
+                <a href={commit.url} target="_blank">
+                    <section class="left">
+                        <img
+                            src={commit.image}
+                            alt={commit.name}
+                            class="avatar"
+                            />
+                    </section>
+                    
+                    <section class="right">
+                        <span class="bigText">{commit.name}</span>
+                        <span>{commit.message}</span>
+                        <span class="date">Commited @ {commit.date}</span>
+                    </section>
+                </a>
+            {/each}
+        </div>
+    {/if}
+</main>
+
 
 <!--  -->
 
 <style>
-    a {
+    div {
         background-color: var(--background);
         border: 2px solid var(--primary);
-        padding: 0.75rem 1rem;
+        padding: 0.75rem 2rem;
         border-radius: 10px;
         display: flex;
-        gap: 5px;
+        flex-direction: column;
+        gap: 15px;
         text-align: left;
         align-items: center;
-        text-decoration: none;
         color: var(--text);
         
-        .left {
-            .avatar {
-                width: 45px;
-                height: 45px;
-                border-radius: 100%;
-            }
-        }
-        
-        .right {
+        a {
             display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 5px;
-
-            .date {
-                font-size: 0.8rem;
-                color: rgba(255, 255, 255, 0.5);
+            gap: 10px;
+            text-align: left;
+            align-items: center;
+            text-decoration: none;
+            color: var(--text);
+            width: 100%;
+            
+            .left {
+                .avatar {
+                    width: 45px;
+                    height: 45px;
+                    border-radius: 100%;
+                }
             }
-        }
-
-        transition: scale 0.15s ease-in-out;
-        &:hover {
-            scale: 1.05;
-            cursor: pointer;
+            
+            .right {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+    
+                .date {
+                    font-size: 0.8rem;
+                    color: rgba(255, 255, 255, 0.5);
+                }
+            }
+    
+            transition: scale 0.15s ease-in-out;
+            &:hover {
+                scale: 1.05;
+                cursor: pointer;
+            }
         }
     }
+    
     
     .bigText {
         font-weight: bold;

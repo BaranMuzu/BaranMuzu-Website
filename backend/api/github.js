@@ -25,13 +25,15 @@ async function getLatestCommit() {
         const date = new Date(dateString);
         return date.toLocaleDateString() + " " + date.toLocaleTimeString();
     }
+
+    const final = data.slice(0, 6).map(item => ({
+        image: item.author.avatar_url,
+        name: item.commit.author.name,
+        message: item.commit.message,
+        date: formatDate(item.commit.author.date),
+        url: item.html_url,
+    }))
     
-    return {
-        image: data[0].author.avatar_url,
-        name: data[0].commit.author.name,
-        message: data[0].commit.message,
-        date: formatDate(data[0].commit.author.date),
-        url: data[0].html_url,
-    };
+    return final;
 }
 export { getLatestCommit };
