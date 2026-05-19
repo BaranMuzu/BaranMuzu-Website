@@ -2,8 +2,8 @@
     import Age from '../misc/Age.svelte';
     import WakaStats from '../misc/WakaStats.svelte';
 
+    // discord func
     let copied = $state(false);
-
     function copyDiscord() {
         navigator.clipboard.writeText('baranmuzu').then(() => {
             copied = true;
@@ -11,6 +11,30 @@
                 copied = false;
             }, 2000);
         });
+    }
+
+    // c-languages group
+    const languagesGroup = [
+        { name: "Programming Languages", items: [
+            { name: "Lua", img: "lua" },
+            { name: "Haxe", img: "haxe" },
+            { name: "Python", img: "python" },
+            { name: "HTML", img: "html" },
+            { name: "CSS", img: "css" },
+            { name: "JavaScript", img: "js" },
+            { name: "C#", img: "cs" },
+            { name: "Luau", img: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%2Fid%2FOIP.sIS5Fju8Q_o-WuYl-1_BVQHaHa%3Fpid%3DApi&f=1&ipt=2814db9c682b1bd82ace6dbe6460e611c9e4f97c41396cb3c9040cb8c74d4c0b" }
+        ]},
+
+        { name: "Frontend", items: [
+            { name: "Svelte", img: "svelte" },
+            { name: "Astro", img: "astro" },
+        ]}
+    ]
+
+    function isExternalIcon(icon) {
+        if (!icon.includes("https")) return `https://skillicons.dev/icons?i=${icon}`;
+        return icon;
     }
 </script>
 
@@ -24,15 +48,22 @@
     </section>
     
     <section class="programmingLanguage">
-        <section class="langGroup">
-            <span class="bigText">💻 I code in:</span>
-            <img src="https://skillicons.dev/icons?i=haxe,lua,python,html,css&theme=dark" alt="Haxe, Lua, Python, HTML, CSS" />
-        </section>
-        
-        <section class="langGroup">
-            <span class="bigText">💻 Coding Languages I am trying to learn:</span>
-            <img src="https://skillicons.dev/icons?i=cs,cpp,js&theme=dark" alt="C#, C++, JavaScript" />
-        </section>
+        {#each languagesGroup as group}
+            <div class="langGroup">
+                <span class="bigText">{group.name}</span>
+                <div class="langContainer">
+                    {#each group.items as item}
+                        <div class="langItem">
+                            <img
+                                src={isExternalIcon(item.img)}
+                                alt={item.name}
+                            />
+                            <span>{item.name}</span>
+                        </div>
+                    {/each}
+                </div>
+            </div>
+        {/each}
     </section>
     
     <section class="socials">
@@ -43,6 +74,7 @@
             <span>{copied ? 'Copied!' : 'Discord: baranmuzu'}</span>
         </button>
 
+        <!-- TODO: Cleanup by using const group like `languagesGroup` -->
         <section class="mainLinks">
             <a href="https://www.youtube.com/@BaranMuzu" class="youtube">
                 <img src="https://icons.duckduckgo.com/ip3/youtube.com.ico" alt=""/> Youtube
@@ -99,15 +131,45 @@
         
         .programmingLanguage {
             display: flex;
+            flex-direction: column;
             gap: 2rem;
             flex-wrap: wrap;
             justify-content: center;
 
             .langGroup {
                 display: flex;
+                gap: 10px;
                 flex-direction: column;
-                align-items: center;
-                gap: 1rem; 
+                
+                .langContainer {
+                    display: flex;
+                    gap: 10px;
+                    justify-content: center;
+                    width: 100%;
+                    flex-wrap: wrap;
+                    
+                    .langItem {
+                        display: flex;
+                        align-items: center;
+                        gap: 0.5rem;
+                        background-color: var(--sidebar);
+                        border: 2px solid var(--sidebarRightBorder);
+                        padding: 0.5rem 1rem;
+                        border-radius: 15px;
+        
+                        img {
+                            --size: 50px;
+                            width: var(--size);
+                            height: var(--size);
+                            border-radius: 15px;
+                        }
+
+                        span {
+                            font-size: 1.2rem;
+                            color: var(--text);
+                        }
+                    }
+                }
             }
         }
         
