@@ -168,6 +168,12 @@
                             font-size: 1.2rem;
                             color: var(--text);
                         }
+
+                        transition: all 0.1s ease-in-out;
+                        &:hover {
+                            border-color: var(--primary);
+                            scale: 1.05;
+                        }
                     }
                 }
             }
