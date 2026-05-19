@@ -16,13 +16,13 @@
                 return date.toLocaleDateString() + " " + date.toLocaleTimeString();
             }
             
-            latestCommit = data.slice(0, 6).map(item => ({
-                    image: item.image,
-                    name: item.name,
-                    message: item.message,
-                    date: formatDate(item.date),
-                    url: item.url,
-                }))
+            latestCommit = data.map(item => ({
+                image: item.image,
+                name: item.name,
+                message: item.message,
+                date: formatDate(item.date),
+                url: item.url,
+            }))
         } catch (err) {
             error = err.message;
             console.error(err);
