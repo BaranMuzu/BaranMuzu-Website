@@ -10,7 +10,19 @@
             const response = await fetch(url);
             if (!response.ok) throw new Error("Fetching failed. What a skill issue.");
             const data = await response.json();
-            latestCommit = data;
+
+            function formatDate(dateString) {
+                const date = new Date(dateString);
+                return date.toLocaleDateString() + " " + date.toLocaleTimeString();
+            }
+            
+            latestCommit = data.slice(0, 6).map(item => ({
+                    image: item.image,
+                    name: item.name,
+                    message: item.message,
+                    date: formatDate(item.date),
+                    url: item.url,
+                }))
         } catch (err) {
             error = err.message;
             console.error(err);

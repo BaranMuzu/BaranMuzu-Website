@@ -21,16 +21,11 @@ async function getLatestCommit() {
     const response = await fetch(url + "/commits", { headers });
     const data = await response.json();
 
-    function formatDate(dateString) {
-        const date = new Date(dateString);
-        return date.toLocaleDateString() + " " + date.toLocaleTimeString();
-    }
-
     const final = data.slice(0, 6).map(item => ({
         image: item.author.avatar_url,
         name: item.commit.author.name,
         message: item.commit.message,
-        date: formatDate(item.commit.author.date),
+        date: item.commit.author.date,
         url: item.html_url,
     }))
     
