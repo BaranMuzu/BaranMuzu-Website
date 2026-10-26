@@ -16,11 +16,32 @@
     }
 
     const projects = [
+		new Project(
+            "BALD_0S : REBOOTED", 
+            "This is an official revival of BALD_0S, a Baldi's Basics fangame which completely overhauls the lore and gameplay.", 
+            "bald0srebooted.png", 
+            [
+                { name: "GameBanana", url: "https://gamebanana.com/wips/101818" },
+                { name: "Game Jolt", url: "https://gamejolt.com/games/b0s-rebooted/1097576" }
+            ]
+        ),
         new Project(
             "Discovery Island Treasury", 
             "Discovery Island Treasury is a fan-mod of Markiplier Montage about the Treasure Island series. Where in this alternate timeline, the mod focuses more on another YouTuber named RiskRim and his Five Nights at Treasure Island gameplays. This is the demo, so things will change.", 
             "discoveryisland.png", 
             [{ name: "GameBanana", url: "https://gamebanana.com/mods/669679" }]
+        ),
+		new Project(
+            "Tim's Art Ultimatum", 
+            "You, are Jammie, just got kicked out of Joydie's School for putting it under danger. And now, your brother Dammie wakes you up, he tells you that you need to go into a new school, even though, they didn't ask you, and you just left Joydie's school, still tired, even after sleeping. After the news, you dress up in your usual outfit, your teacher wouldn't blame you for not being in a uniform on your first day, right? And so you get into the car and your parents drive you all the way to the new schoolhouse.", 
+            "tims.png", 
+            [{ name: "GameBanana", url: "https://gamebanana.com/mods/717791" }]
+        ),
+		new Project(
+            "Fridtay Funk Baldi ; Kill Baldi", 
+            "This mod is all about Baldi’s Basics fangames! It’s mostly a fun, high-effort troll rather than a serious mod", 
+            "killbaldi.png", 
+            [{ name: "GameBanana", url: "https://gamebanana.com/mods/618481" }]
         ),
         new Project(
             "FNaF 4 on a Friday Night... Funkin'?", 
@@ -28,11 +49,11 @@
             "fnaf4fnf.png", 
             [{ name: "GameBanana", url: "https://gamebanana.com/mods/647429" }]
         ),
-        new Project(
-            "Fridtay Funk Baldi ; Kill Baldi", 
-            "This mod is all about Baldi’s Basics fangames! It’s mostly a fun, high-effort troll rather than a serious mod", 
-            "killbaldi.png", 
-            [{ name: "GameBanana", url: "https://gamebanana.com/mods/618481" }]
+		new Project(
+            "Graysland's Birthday Bash 2", 
+            "Graysland's Birthday Bash 2 is a tribute to everyone's favorite Baldituber, Graysland.", 
+            "grayslandbirth.png", 
+            [{ name: "GameBanana", url: "https://gamebanana.com/mods/694352" }]
         ),
         new Project(
             "Too Tutelar", 
@@ -41,7 +62,7 @@
             [{ name: "GameBanana", url: "https://gamebanana.com/mods/595463" }]
         ),
         new Project(
-            "BALD_0S", 
+            "BALD_0S : LEGACY", 
             "A Simple, Short Baldi Basics Mod, What can go wrong?", 
             "bald0s.png", 
             [
@@ -61,24 +82,6 @@
             "A Friday Night Funkin Mod", 
             "vstabipicomix.jpg", 
             [{ name: "GameBanana", url: "https://gamebanana.com/mods/580976" }]
-        ),
-        new Project(
-            "QT Rewired Psych Engine Port", 
-            "A Friday Night Funkin Psych Port", 
-            "QTPSYCH.jpg", 
-            [{ name: "GameBanana", url: "https://gamebanana.com/mods/573962" }]
-        ),
-        new Project(
-            "Exclusive Pico Mixes", 
-            "A Friday Night Funkin Mod Pack", 
-            "exclusivepico.jpg", 
-            [{ name: "GameBanana", url: "https://gamebanana.com/mods/548433" }]
-        ),
-        new Project(
-            "Tabi Revival [Psych Engine]", 
-            "A Friday Night Funkin Psych Port", 
-            "tabipsych.jpg", 
-            [{ name: "GameBanana", url: "https://gamebanana.com/mods/585916" }]
         )
     ];
 
